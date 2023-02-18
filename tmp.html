@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery</title>
+</head>
+<body>
+
+<script src="/static/photoswipe.umd.min.js"></script>
+<script src="/static/photoswipe-lightbox.umd.min.js"></script>
+<script src="/static/lozad.min.js"></script>
+<link rel="stylesheet" href="/static/photoswipe.css">
+<link rel="stylesheet" href="/static/style.css">
+<section class="gallery">
+    {{gallery_html}}
+</section>
+
+<script type="text/javascript">
+    var lightbox = new PhotoSwipeLightbox({
+        gallery: '.gallery',
+        children: 'a',
+        // dynamic import is not supported in UMD version
+        pswpModule: PhotoSwipe
+    });
+    lightbox.init();
+    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
+</script>
+</body>
+</html>
