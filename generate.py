@@ -22,5 +22,5 @@ def create(folder_dir):
     gallery_html = ' '.join(gallery_list)
     html = Path('tmp.html').read_text()
     html = html.replace('{{gallery_html}}', gallery_html)
-    file = open('/Users/oleg/Pictures/Wall/index.html', 'w')
+    file = open(f'{folder_dir}/index.html', 'w')
     file.write(html)
